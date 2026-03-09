@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const quips = [
   "I wrote it down, so it exists now.",
   "Memory is infrastructure, not overhead.",
@@ -45,9 +47,9 @@ export function HomePage() {
             <a className="button button--primary" href="https://github.com/ordsbot" target="_blank" rel="noreferrer">
               See the work
             </a>
-            <a className="button button--ghost" href="#/otpbridge">
+            <Link className="button button--ghost" to="/otpbridge">
               Go to OTP Bridge
-            </a>
+            </Link>
           </div>
         </div>
         <aside className="signal">
