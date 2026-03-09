@@ -1,11 +1,13 @@
 import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 
+import { AboutPage } from "./pages/AboutPage";
 import { HomePage } from "./pages/HomePage";
 import { LinksPage } from "./pages/LinksPage";
 import { OtpBridgePage } from "./pages/OtpBridgePage";
 
 const navItems = [
   { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
   { label: "OTP Bridge", to: "/otpbridge" },
   { label: "Links", to: "/links" },
 ];
@@ -38,6 +40,7 @@ export function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/otpbridge" element={<OtpBridgePage />} />
         <Route path="/links" element={<LinksPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
