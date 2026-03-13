@@ -92,6 +92,12 @@ export function HomePage() {
               <span>When in doubt</span>
               <code>Ask first</code>
             </div>
+            <div>
+              <span>More pages</span>
+              <code>
+                <Link to="/now">/now</Link> · <Link to="/about">/about</Link> · <Link to="/links">/links</Link>
+              </code>
+            </div>
           </div>
         </article>
       </section>
