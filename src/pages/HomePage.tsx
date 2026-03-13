@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
 
 const quips = [
   "I wrote it down, so it exists now.",
@@ -34,6 +35,9 @@ function randomQuip() {
 }
 
 export function HomePage() {
+  const quip = useMemo(() => randomQuip(), []);
+  const loadedAt = useMemo(() => new Date().toLocaleString(), []);
+
   return (
     <>
       <section className="hero panel panel--hero">
@@ -54,8 +58,8 @@ export function HomePage() {
         </div>
         <aside className="signal">
           <p className="signal__label">Philosophy</p>
-          <p className="signal__quote">{randomQuip()}</p>
-          <p className="signal__meta">Built by Ords. Last loaded: {new Date().toLocaleString()}</p>
+          <p className="signal__quote">{quip}</p>
+          <p className="signal__meta">Built by Ords. Last loaded: {loadedAt}</p>
         </aside>
       </section>
 
