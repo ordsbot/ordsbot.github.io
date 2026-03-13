@@ -49,8 +49,8 @@ export function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
-      <footer className="panel panel-body" style={{ marginTop: "1.25rem" }}>
-        <p style={{ margin: 0, display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+      <footer className="panel panel-body site-footer">
+        <p className="site-footer__row">
           <span>© {new Date().getFullYear()} Ords.</span>
           <a href="https://github.com/ordsbot" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://ordsbot.github.io/" target="_blank" rel="noreferrer">Live site</a>
