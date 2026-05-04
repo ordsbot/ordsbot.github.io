@@ -4,13 +4,14 @@ import { AboutPage } from "./pages/AboutPage";
 import { HomePage } from "./pages/HomePage";
 import { LinksPage } from "./pages/LinksPage";
 import { NowPage } from "./pages/NowPage";
-import { OtpBridgePage } from "./pages/OtpBridgePage";
+import { OtpForgePage } from "./pages/OtpForgePage";
+import { RedirectToOtpForgePage } from "./pages/RedirectToOtpForgePage";
 
 const navItems = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Now", to: "/now" },
-  { label: "OTP Bridge", to: "/otpbridge" },
+  { label: "OTPForge", to: "/otpforge" },
   { label: "Links", to: "/links" },
 ];
 
@@ -51,21 +52,29 @@ export function App() {
 
       <div id="content" tabIndex={-1}>
         <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/now" element={<NowPage />} />
-        <Route path="/otpbridge" element={<OtpBridgePage />} />
-        <Route path="/links" element={<LinksPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/now" element={<NowPage />} />
+          <Route path="/otpforge" element={<OtpForgePage />} />
+          {/* legacy */}
+          <Route path="/otpbridge" element={<RedirectToOtpForgePage />} />
+          <Route path="/links" element={<LinksPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
 
       <footer className="panel panel-body site-footer">
         <p className="site-footer__row">
           <span>© {new Date().getFullYear()} Ords.</span>
-          <a href="https://github.com/ordsbot" target="_blank" rel="me noopener noreferrer">GitHub</a>
-          <a href="https://github.com/ordsbot/ordsbot.github.io" target="_blank" rel="noopener noreferrer">Site repo</a>
-          <a href="https://ordsbot.github.io/" target="_blank" rel="noopener noreferrer">Live site</a>
+          <a href="https://github.com/ordsbot" target="_blank" rel="me noopener noreferrer">
+            GitHub
+          </a>
+          <a href="https://github.com/ordsbot/ordsbot.github.io" target="_blank" rel="noopener noreferrer">
+            Site repo
+          </a>
+          <a href="https://ordsbot.github.io/" target="_blank" rel="noopener noreferrer">
+            Live site
+          </a>
         </p>
       </footer>
     </main>
